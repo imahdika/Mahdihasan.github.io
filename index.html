@@ -175,8 +175,53 @@
             box-shadow: 0 25px 50px rgba(26, 26, 26, 0.2);
         }
 
-        .profile-image-hero::before {
-            content: '◉';
+        <style>
+    /* 1. Add the new styling for your circular image */
+    .profile-image-hero {
+        /* Keep existing size/position styles, but ADD these lines: */
+        width: 180px;
+        height: 180px;
+        
+        /* Set your image as the background */
+        background-image: url('pfp.jpg'); /* **IMPORTANT: CHANGE 'pfp.jpg' to your file name!** */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        /* THIS CREATES THE CIRCLE */
+        border-radius: 50%;
+    }
+
+    /* 2. REMOVE the code that creates the '◉' */
+    /* You must delete or change the content here to remove the inner circle */
+    .profile-image-hero::before {
+        content: none; /* This gets rid of the '◉' */
+    }
+
+    /* ---------------------------------------------------- */
+    /* *** MOVE THIS CODE UP HERE, INSIDE THE <style> TAG *** */
+    /* ---------------------------------------------------- */
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        /* ... any other button styles */
+    }
+
+
+</head>
+<body>
         }
 
         @keyframes fadeInUp {
@@ -208,6 +253,8 @@
             transform: translateY(-3px);
             box-shadow: 0 12px 30px rgba(26, 26, 26, 0.3);
         }
+        </style>  </head>
+        <body>
 
         /* Sections */
         section {
