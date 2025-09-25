@@ -1,0 +1,143 @@
+1. Prepare Your Images
+Before editing the HTML, you need to have your images ready and accessible.
+
+Save Your Images: Put your real image files (e.g., .jpg, .png) into a folder, usually named images or assets, within the same directory as your index.html.
+
+Example Image Names:
+
+hero-showcase.jpg (for the featured campaign)
+
+mahdi-hasan-profile.jpg (for the about section)
+
+project1.jpg, project2.jpg, etc. (for the project cards)
+
+2. Replace the Hero Section Placeholder
+The Hero section's featured project image is currently a div with a solid color/gradient and a symbol.
+
+Locate the Code
+Find the following block within the <section id="home" class="hero"> tag:
+
+HTML
+
+<div class="hero-project">
+    <div class="project-showcase-image">
+        </div>
+    <div class="project-showcase-text">
+        </div>
+</div>
+The Change
+Replace the entire empty div with the class project-showcase-image with an <img> tag pointing to your image file. You can remove the comments and the placeholder div.
+
+HTML
+
+<div class="hero-project">
+    <img src="images/hero-showcase.jpg" alt="Featured Campaign Success Example" class="project-showcase-image-real" style="object-fit: cover; border-radius: 15px; width: 100%; height: 280px;">
+    <div class="project-showcase-text">
+        <h3 class="project-showcase-title">Featured Campaign Success</h3>
+        <p class="project-showcase-desc">My latest multi-channel marketing campaign that increased brand awareness by 40% across key demographics while optimizing trade partnerships and field activation strategies.</p>
+    </div>
+</div>
+Note: You may need to adjust the CSS style (like object-fit: cover;) if your image doesn't display correctly within the container's dimensions.
+
+3. Replace the About Section (Profile Image) Placeholder
+The profile image is also a div styled to be a colored circle with a symbol.
+
+Locate the Code
+Find the following line within the <section id="about" class="about"> tag:
+
+HTML
+
+<div class="profile-image"></div>
+The Change
+Replace this div with an <img> tag.
+
+HTML
+
+<div class="about-content">
+    <img src="images/mahdi-hasan-profile.jpg" alt="Mahdi Hasan Profile Picture" class="profile-image-real" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; margin: 0 auto; box-shadow: 0 20px 40px rgba(26, 26, 26, 0.15); transition: transform 0.3s ease; border: 4px solid rgba(26, 26, 26, 0.1);">
+    <div class="about-text">
+        </div>
+</div>
+Note: The inline style added above mimics the original div's styling (circular shape, size, shadows) to ensure consistency.
+
+4. Replace Project Card Placeholders
+Each project card has a placeholder image area.
+
+Locate the Code
+For each project card (inside <div class="project-card">), find the line:
+
+HTML
+
+<div class="project-image icon-rocket"></div>
+or
+
+HTML
+
+<div class="project-image icon-store"></div>
+(The class will change based on the project, like icon-rocket, icon-store, etc.)
+
+The Change
+Replace that placeholder div with an <img> tag pointing to the project's visual.
+
+Original Project 1 Example:
+
+HTML
+
+<div class="project-card">
+    <div class="project-image icon-rocket"></div> <div class="project-content">
+        </div>
+</div>
+Modified Project 1 Example:
+
+HTML
+
+<div class="project-card">
+    <img src="images/project1.jpg" alt="Image of National Product Launch Campaign" class="project-image-real" style="width: 100%; height: 200px; object-fit: cover;">
+    <div class="project-content">
+        <h3 class="project-title">National Product Launch Campaign</h3>
+        </div>
+</div>
+Repeat this replacement for all six project cards, updating the src attribute for each one (e.g., images/project2.jpg, images/project3.jpg, etc.).
+
+5. (Optional but Recommended) Update CSS
+To keep your code clean, you should add new classes to your CSS and remove the old placeholder styling.
+
+Add New CSS Classes
+Add these new styles within your existing <style> block to ensure your new <img> tags inherit the look of their containers:
+
+CSS
+
+/* New styles for the real images */
+.project-showcase-image-real {
+    /* Retain original dimensions and rounding for the hero image */
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+    object-fit: cover; /* Ensures image fills container without distortion */
+}
+
+.profile-image-real {
+    /* Retain original dimensions, rounding, and styling for the profile image */
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(26, 26, 26, 0.15);
+    transition: transform 0.3s ease;
+    border: 4px solid rgba(26, 26, 26, 0.1);
+}
+
+.profile-image-real:hover {
+    /* Retain hover effect */
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px rgba(26, 26, 26, 0.2);
+}
+
+.project-image-real {
+    /* Retain original dimensions for project cards */
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures image fills container without distortion */
+}
+If you use these new CSS classes, you can remove the inline style="..." attributes added in the previous steps for cleaner HTML.
